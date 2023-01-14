@@ -28,7 +28,7 @@ class Pet(models.Model):
     telefone = models.CharField(max_length=14)
     raca = models.ForeignKey(Raca, on_delete=models.DO_NOTHING)
     tags = models.ManyToManyField(Tag)
-    status = models.CharField(max_length=1, choices=choices_status)
+    status = models.CharField(max_length=1, choices=choices_status, default='P')
     foto = models.ImageField(upload_to="fotos_pets")
 
     def __str__(self):
